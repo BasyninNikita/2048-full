@@ -5,6 +5,21 @@
 using namespace std;
 int g=1;
 int m;
+bool pustye(int matr[4][4])
+{
+    for(int i=0;i<4;i++)
+    {
+        for(int j=0;j<4;j++)
+        {
+            if(matr[i][j]==0)
+            {
+                return true;
+            }
+            else   return false ;
+        }
+    }
+  
+}
 void poyavchnov(int matr[4][4]) {
 	int k = rand() % 4, l = rand() % 4;
 	if (matr[k][l] == 0) matr[k][l] = g;
@@ -224,7 +239,7 @@ int main()
      {
          vniz(matr);
          if(!sravn(matr1,matr))
-         {poyavch(matr);}else {poyavchnov(matr);g=g+2; };
+         {poyavch(matr);}else if(pustye(matr)) {poyavchnov(matr);g=g+2; };
          vyvod(matr);
          cout << "Score: " << m << endl;
          novmatr(matr1,matr);
@@ -232,7 +247,7 @@ int main()
      if(op=='k')
      {
          vverh(matr);
-         if(!sravn(matr1,matr)){poyavch(matr);}else {poyavchnov(matr);g=g+2; };
+         if(!sravn(matr1,matr)){poyavch(matr);}else if(pustye(matr)) {poyavchnov(matr);g=g+2; };
          vyvod(matr);
          cout << "Score: " << m << endl;
          novmatr(matr1,matr);
@@ -241,7 +256,7 @@ int main()
      if(op=='l')
      {
          vpravo(matr);
-         if(!sravn(matr1,matr)){poyavch(matr);}else {poyavchnov(matr);g=g+2; };
+         if(!sravn(matr1,matr)){poyavch(matr);}else if(pustye(matr)) {poyavchnov(matr);g=g+2; };
          vyvod(matr);
          cout << "Score: " << m << endl; 
          novmatr(matr1,matr);
@@ -249,7 +264,7 @@ int main()
      if(op=='h')
      {
          vlevo(matr);
-         if(!sravn(matr1,matr)){poyavch(matr);}else {poyavchnov(matr);g=g+2; };
+         if(!sravn(matr1,matr)){poyavch(matr);}else if(pustye(matr)) {poyavchnov(matr);g=g+2; };
          vyvod(matr);
          cout << "Score: " << m << endl;
          novmatr(matr1,matr);
