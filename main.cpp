@@ -3,7 +3,13 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
+int g=1;
 int m;
+void poyavchnov(int matr[4][4]) {
+	int k = rand() % 4, l = rand() % 4;
+	if (matr[k][l] == 0) matr[k][l] = g;
+	else poyavchnov(matr);
+}
 void poyavch(int matr[4][4]) {
 	int i = rand() % 4, j = rand() % 4, k = rand() % 10;
 	if ((matr[i][j] == 0) && (k == 1)) matr[i][j] = 4;
@@ -211,7 +217,6 @@ int main()
  poyavch(matr);poyavch(matr);
  novmatr(matr1,matr);
  vyvod(matr); 
- int g=1;
  while(cin>>op)
  {
      prover(matr);
@@ -219,7 +224,7 @@ int main()
      {
          vniz(matr);
          if(!sravn(matr1,matr))
-         {poyavch(matr);}else {int k=rand() % 4; int l=rand() % 4;matr[k][l]=g;g=g+2; };
+         {poyavch(matr);}else {poyavchnov(matr);g=g+2; };
          vyvod(matr);
          cout << "Score: " << m << endl;
          novmatr(matr1,matr);
@@ -227,7 +232,7 @@ int main()
      if(op=='k')
      {
          vverh(matr);
-         if(!sravn(matr1,matr)){poyavch(matr);}else {int k=rand() % 4; int l=rand() % 4;matr[k][l]=g;g=g+2; };
+         if(!sravn(matr1,matr)){poyavch(matr);}else {poyavchnov(matr);g=g+2; };
          vyvod(matr);
          cout << "Score: " << m << endl;
          novmatr(matr1,matr);
@@ -236,7 +241,7 @@ int main()
      if(op=='l')
      {
          vpravo(matr);
-         if(!sravn(matr1,matr)){poyavch(matr);}else {int k=rand() % 4; int l=rand() % 4;matr[k][l]=g;g=g+2; };
+         if(!sravn(matr1,matr)){poyavch(matr);}else {poyavchnov(matr);g=g+2; };
          vyvod(matr);
          cout << "Score: " << m << endl; 
          novmatr(matr1,matr);
@@ -244,7 +249,7 @@ int main()
      if(op=='h')
      {
          vlevo(matr);
-         if(!sravn(matr1,matr)){poyavch(matr);}else {int k=rand() % 4; int l=rand() % 4;matr[k][l]=g;g=g+2; };
+         if(!sravn(matr1,matr)){poyavch(matr);}else {poyavchnov(matr);g=g+2; };
          vyvod(matr);
          cout << "Score: " << m << endl;
          novmatr(matr1,matr);
