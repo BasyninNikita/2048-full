@@ -26,7 +26,7 @@ void vverh(int matr[4][4])
 				
 				for (int j=0; j<4; j++) {
 					for (int i=0; i<3; i++)
-					if ((matr[i][j] == matr[i+1] [j]) || (matr[i][j]%2!=1) || (matr[i+1][j]%2!=1)) {
+					if ((matr[i][j] == matr[i+1] [j]) && (matr[i][j]%2!=1) && (matr[i+1][j]%2!=1)) {
 						matr[i][j] += matr[i+1][j];
 						matr[i+1][j]=0;
 						m+=matr[i][j];
@@ -63,7 +63,7 @@ void vniz(int matr[4][4])
 				for (int j=0; j<4; j++) {
 					
 					for (int i=3; i>0; i--){
-						if ((matr[i][j] == matr[i-1] [j]) || (matr[i][j]%2!=1) || (matr[i-1][j]%2!=1)) {
+						if ((matr[i][j] == matr[i-1] [j]) && (matr[i][j]%2!=1) && (matr[i-1][j]%2!=1)) {
 							matr[i][j] += matr[i-1][j];
 							matr[i-1][j]=0;
 							m+=matr[i][j];
@@ -100,7 +100,7 @@ void vpravo(int matr[4][4])
 				
 				for (int i=0; i<4; i++) {
 					for (int j=3; j>0;j-- )
-					if ((matr[i][j] == matr[i] [j-1]) || (matr[i][j]%2!=1) || (matr[i][j-1]%2!=1)) {
+					if ((matr[i][j] == matr[i] [j-1]) && (matr[i][j]%2!=1) && (matr[i][j-1]%2!=1)) {
 						matr[i][j] += matr[i][j-1];
 						matr[i][j-1]=0;
 						m+=matr[i][j];
@@ -137,7 +137,7 @@ void vlevo(int matr[4][4])
 				
 				for (int i=0; i<4; i++) {
 					for (int j=0; j<3; j++)
-					if ((matr[i][j] == matr[i] [j+1]) || (matr[i][j]%2!=1) || (matr[i][j+1]%2!=1)) {
+					if ((matr[i][j] == matr[i] [j+1]) && (matr[i][j]%2!=1) && (matr[i][j+1]%2!=1)) {
 						matr[i][j] += matr[i][j+1];
 						matr[i][j+1]=0;
 						m+=matr[i][j];
