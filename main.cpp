@@ -219,7 +219,7 @@ int main()
      {
          vniz(matr);
          if(!sravn(matr1,matr))
-         {poyavch(matr);}else {int k=rand() % 4; int l=rand() % 4;matr[k][l]=g;g+=2; };
+         {poyavch(matr);}else {int k=rand() % 4; int l=rand() % 4;matr[k][l]=g;g=g+2; };
          vyvod(matr);
          cout << "Score: " << m << endl;
          novmatr(matr1,matr);
@@ -227,7 +227,7 @@ int main()
      if(op=='k')
      {
          vverh(matr);
-         if(!sravn(matr1,matr)){poyavch(matr);}else {int k=rand() % 4; int l=rand() % 4;matr[k][l]=g;g+=2; };
+         if(!sravn(matr1,matr)){poyavch(matr);}else {int k=rand() % 4; int l=rand() % 4;matr[k][l]=g;g=g+2; };
          vyvod(matr);
          cout << "Score: " << m << endl;
          novmatr(matr1,matr);
@@ -236,7 +236,7 @@ int main()
      if(op=='l')
      {
          vpravo(matr);
-         if(!sravn(matr1,matr)){poyavch(matr);}else {int k=rand() % 4; int l=rand() % 4;matr[k][l]=g;g+=2; };
+         if(!sravn(matr1,matr)){poyavch(matr);}else {int k=rand() % 4; int l=rand() % 4;matr[k][l]=g;g=g+2; };
          vyvod(matr);
          cout << "Score: " << m << endl; 
          novmatr(matr1,matr);
@@ -244,7 +244,7 @@ int main()
      if(op=='h')
      {
          vlevo(matr);
-         if(!sravn(matr1,matr)){poyavch(matr);}else {int k=rand() % 4; int l=rand() % 4;matr[k][l]=g;g+=2; };
+         if(!sravn(matr1,matr)){poyavch(matr);}else {int k=rand() % 4; int l=rand() % 4;matr[k][l]=g;g=g+2; };
          vyvod(matr);
          cout << "Score: " << m << endl;
          novmatr(matr1,matr);
